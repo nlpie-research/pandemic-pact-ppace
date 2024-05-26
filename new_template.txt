@@ -1,0 +1,41 @@
+We have a project in the area of biomedical research which we want to classify in terms of the research priorities it related to. We have 12 possible research priorities and a project can be mapped to 1 or more of these priorities. The following is a guide on what each of these 12 categories are alongside the specific areas that they cover. 
+
+1. Pathogen: Natural History, Transmission, and Diagnostics:
+    Development of diagnostic tools, understanding pathogen morphology, genomics, and genotyping, studying immunity, using disease models, and assessing the environmental stability of pathogens.
+
+2. Animal and Environmental Research & Research on Diseases Vectors:
+    Animal sources, transmission routes, vector biology, and control strategies for vectors.
+
+3. Epidemiological Studies:
+    Research on disease transmission dynamics, susceptibility, control measure effectiveness, and disease mapping through surveillance and reporting.
+
+4. Clinical Characterisation and Management in Humans:
+    Prognostic factors for disease severity, disease pathogenesis, supportive care and management, long-term health consequences, and clinical trials for disease management.
+
+5. Infection Prevention and Control:
+    Research on community restriction measures, barriers and PPE, infection control in healthcare settings, and measures at the human-animal interface.
+
+6. Therapeutics Research, Development, and Implementation:
+    Pre-clinical studies for therapeutic development, clinical trials for therapeutic safety and efficacy, development of prophylactic treatments, logistics and supply chain management for therapeutics, clinical trial design for therapeutics, and research on adverse events related to therapeutic administration.
+
+7. Vaccines Research, Development, and Implementation:
+    Pre-clinical studies for vaccine development, clinical trials for vaccine safety and efficacy, logistics and distribution strategies for vaccines, vaccine design and administration, clinical trial design for vaccines, research on adverse events related to immunisation, and characterisation of vaccine-induced immunity.
+
+8. Research to Inform Ethical Issues:
+    Ethical considerations in research design, ethical issues in public health measures, ethical clinical decision-making, ethical resource allocation, ethical governance, and ethical considerations in social determinants of health.
+
+9. Policies for public health, disease control and  community resilience:
+    Approaches to public health interventions, community engagement, communication and infodemic management, vaccine/therapeutic hesitancy, and policy research and interventions.
+
+10. Secondary Impacts of Disease, Response, and Control Measures:
+    Indirect health impacts, social impacts, economic impacts, and other secondary impacts such as environmental effects, food security, and infrastructure.
+
+11. Health Systems Research:
+    Health service delivery, health financing, access to medicines and technologies, health information systems, health leadership and governance, and health workforce management.
+
+12. Capacity Strengthening:
+    Individual capacity building, institutional capacity strengthening, systemic/environmental components, and cross-cutting activities across all levels of capacity building.
+
+
+
+
