@@ -16,12 +16,14 @@ from trl import SFTTrainer
 from trl import SFTConfig, SFTTrainer, DataCollatorForCompletionOnlyLM
 from transformers import TrainingArguments
 
+huggingface_token = "YOUR_HUGGINGFACE_TOKEN"
+
 # Load the data
 pandemic_dataset = ds.load_dataset("nlpie/pandemic_pact")["train"]
 
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 
-tokenizer = ts.AutoTokenizer.from_pretrained(model_id)
+tokenizer = ts.AutoTokenizer.from_pretrained(model_id, token=huggingface_token)
 
 tokenizer.padding_side = 'right'
 tokenizer.pad_token = tokenizer.eos_token
@@ -70,6 +72,7 @@ training_args = TrainingArguments(
 model = ts.AutoModelForCausalLM.from_pretrained(
     model_id,
     device_map=device_map,
+    token=huggingface_token,
     attn_implementation="flash_attention_2",
     torch_dtype=torch.bfloat16)
 
