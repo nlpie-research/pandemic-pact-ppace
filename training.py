@@ -16,14 +16,12 @@ from trl import SFTTrainer
 from trl import SFTConfig, SFTTrainer, DataCollatorForCompletionOnlyLM
 from transformers import TrainingArguments
 
-huggingface_token = "YOUR_HUGGINGFACE_TOKEN"
-
 # Load the data
-pandemic_dataset = ds.load_dataset("nlpie/pandemic_pact", token=huggingface_token)["train"]
+pandemic_dataset = ds.load_dataset("nlpie/pandemic_pact")["train"]
 
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 
-tokenizer = ts.AutoTokenizer.from_pretrained(model_id, token=huggingface_token)
+tokenizer = ts.AutoTokenizer.from_pretrained(model_id)
 
 tokenizer.padding_side = 'right'
 tokenizer.pad_token = tokenizer.eos_token
@@ -41,7 +39,7 @@ def promptedMappingFunction(items):
 
   return tokenizer(texts, truncation=False, add_special_tokens=False)
 
-promptTokenizedDataset = pandemic_dataset["train"].map(promptedMappingFunction, batched=True, remove_columns=pandemic_dataset["train"].column_names)
+promptTokenizedDataset = pandemic_dataset.map(promptedMappingFunction, batched=True, remove_columns=pandemic_dataset["train"].column_names)
 promptTokenizedDataset = promptTokenizedDataset.shuffle(len(promptTokenizedDataset))
 
 n_gpus = torch.cuda.device_count()
@@ -54,7 +52,7 @@ if os.environ.get('LOCAL_RANK') is not None:
 print(device_map)
 
 training_args = TrainingArguments(
-            output_dir=f"/teamspace/studios/this_studio/llama/checkpoints/",
+            output_dir=f"llama/checkpoints/",
             per_device_train_batch_size=1,
             per_device_eval_batch_size=1,
             bf16=True,  # Use BF16 if available
@@ -71,7 +69,6 @@ training_args = TrainingArguments(
 
 model = ts.AutoModelForCausalLM.from_pretrained(
     model_id,
-    token=huggingface_token,
     device_map=device_map,
     attn_implementation="flash_attention_2",
     torch_dtype=torch.bfloat16)
@@ -107,4 +104,4 @@ trainer = SFTTrainer(
 
 trainer.train()
 
-model.save_pretrained("/teamspace/studios/this_studio/llama/final/")
+model.save_pretrained("llama/final/")
